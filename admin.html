@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin — Charger House</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <span class="bolt">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-13h-7l0-7z"/></svg>
+      </span>
+      Charger House — Admin
+    </div>
+  </div>
+</header>
+
+<div id="gateView" class="admin-gate">
+  <h2>Admin sign-in</h2>
+  <p>Enter the admin password to manage products.</p>
+  <div class="field">
+    <label for="passwordInput">Password</label>
+    <input type="password" id="passwordInput" />
+  </div>
+  <div id="gateError" class="form-error" style="display:none; margin: 8px 0;"></div>
+  <button class="place-order-btn" id="signInBtn" style="width:100%;">Sign in</button>
+</div>
+
+<main class="container admin-body" id="adminView" style="display:none;">
+
+  <div class="panel">
+    <h2>Add a product</h2>
+    <form id="addForm" class="form-grid">
+      <div class="field">
+        <label for="fName">Name</label>
+        <input type="text" id="fName" required />
+      </div>
+      <div class="field">
+        <label for="fImage">Image URL (optional)</label>
+        <input type="text" id="fImage" />
+      </div>
+      <div class="field">
+        <label for="fRetail">Retail price (Rs.)</label>
+        <input type="number" id="fRetail" min="0" required />
+      </div>
+      <div class="field">
+        <label for="fSale">Sale price (Rs., optional)</label>
+        <input type="number" id="fSale" min="0" />
+      </div>
+      <div class="field">
+        <label for="fStock">Stock</label>
+        <input type="number" id="fStock" min="0" value="0" />
+      </div>
+    </form>
+    <div id="addError" class="form-error" style="display:none; margin-top:10px;"></div>
+    <button class="place-order-btn" id="addBtn" style="margin-top:14px;">Add product</button>
+    <div class="hint">Leave sale price blank to sell at retail price only.</div>
+  </div>
+
+  <div class="panel">
+    <h2>Products</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Retail</th>
+          <th>Sale</th>
+          <th>Stock</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="productTableBody"></tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <h2>Orders</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Order</th>
+          <th>Customer</th>
+          <th>Payment</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="orderTableBody"></tbody>
+    </table>
+  </div>
+
+</main>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "mobile-accessories-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple self-hosted store for mobile accessories with COD and online payment",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "pg": "^8.12.0"
+  }
+}

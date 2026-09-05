@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Charger House — Mobile Accessories, Hall Road Lahore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="contact-bar">
+  <div class="container">
+    <div>Hall Road, Khadim Centre, Shop B-28, Lahore</div>
+    <div>
+      <a href="tel:03018400847">📞 0301-8400847</a>
+      <span class="sep">•</span>
+      <a href="https://wa.me/923018400847" target="_blank" rel="noopener">WhatsApp us</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <span class="bolt">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-13h-7l0-7z"/></svg>
+      </span>
+      Charger House
+    </div>
+    <button class="cart-button" id="openCartBtn">
+      Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Genuine mobile accessories, straight from Hall Road.</h1>
+    <p>Chargers, cables, cases and earbuds — order online, or walk in to Khadim Centre B-28.</p>
+    <div class="badge">✓ Cash on delivery available</div>
+  </div>
+</section>
+
+<main class="container">
+  <div class="grid" id="productGrid">
+    <!-- product cards render here -->
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-brand">
+      <div class="brand">
+        <span class="bolt">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 11-13h-7l0-7z"/></svg>
+        </span>
+        Charger House
+      </div>
+      <p>Your neighborhood spot for mobile accessories on Hall Road — chargers, cables, cases, and more.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Visit the shop</h4>
+      <div>Khadim Centre, Shop B-28</div>
+      <div>Hall Road, Lahore</div>
+    </div>
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <a href="tel:03018400847">0301-8400847</a>
+      <a href="https://wa.me/923018400847" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    © <span id="year"></span> Charger House. All rights reserved.
+  </div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+
+<aside class="drawer" id="cartDrawer">
+  <div class="drawer-header">
+    <h3>Your cart</h3>
+    <button class="drawer-close" id="closeCartBtn">&times;</button>
+  </div>
+  <div class="drawer-body">
+    <div id="cartLines"></div>
+    <div class="cart-total-row" id="cartTotalRow" style="display:none;">
+      <span>Total</span>
+      <span id="cartTotal">Rs. 0</span>
+    </div>
+
+    <form class="checkout-form" id="checkoutForm" style="display:none;">
+      <div class="field">
+        <label for="custName">Full name</label>
+        <input type="text" id="custName" required />
+      </div>
+      <div class="field">
+        <label for="custPhone">Phone number</label>
+        <input type="tel" id="custPhone" required />
+      </div>
+      <div class="field">
+        <label for="custAddress">Delivery address</label>
+        <textarea id="custAddress" rows="3" required></textarea>
+      </div>
+
+      <div class="field">
+        <label>Payment method</label>
+        <div class="payment-options">
+          <button type="button" class="payment-option selected" data-method="cod">
+            💵 Cash on delivery
+          </button>
+          <button type="button" class="payment-option" data-method="online">
+            💳 Pay online
+          </button>
+        </div>
+      </div>
+
+      <div id="formError" class="form-error" style="display:none;"></div>
+      <button type="submit" class="place-order-btn" id="placeOrderBtn">Place order</button>
+    </form>
+
+    <div id="orderConfirmation" class="order-confirmation" style="display:none;"></div>
+  </div>
+</aside>
+
+<script src="js/store.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
